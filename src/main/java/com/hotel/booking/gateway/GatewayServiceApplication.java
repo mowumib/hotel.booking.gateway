@@ -29,7 +29,7 @@ public class GatewayServiceApplication {
 		List<GroupedOpenApi> groups = new ArrayList<>();
 		List<RouteDefinition> definitions = locator.getRouteDefinitions().collectList().block();
 		assert definitions != null;
-		definitions.stream().filter(routeDefinition -> routeDefinition.getId().matches("hotel-services|user-services"))
+		definitions.stream().filter(routeDefinition -> routeDefinition.getId().matches("user-services"))
 				.forEach(routeDefinition -> {
 					String name = routeDefinition.getId();
 					groups.add(GroupedOpenApi.builder().pathsToMatch("/" + name + "/**").group(name).build());
