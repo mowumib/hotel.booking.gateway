@@ -5,7 +5,7 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>3.4.4</version>
+		<version>3.4.5</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.hotel.booking</groupId>
@@ -111,9 +111,20 @@
 
 	<build>
 		<plugins>
-			<plugin>
+			<!-- <plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin> -->
+
+			<plugin>
+				<groupId>com.google.cloud.tools</groupId>
+				<artifactId>jib-maven-plugin</artifactId>
+				<version>3.4.5</version>
+				<configuration>
+					<to>
+						<image>mowumi/${project.artifactId}:v1</image>
+					</to>
+				</configuration>
 			</plugin>
 		</plugins>
 	</build>
